@@ -67,5 +67,44 @@ def array_indexing_using_numpy():
 
     #negative indexing
     print(arr2d[1, -1])# Access the last element of the second row
-    
-array_indexing_using_numpy()
+
+#array attribute
+def array_attribute():
+    a1 = np.arange(10,dtype=int)
+    a2 = np.arange(12,dtype=float).reshape(3,4)
+    a3 = np.arange(8).reshape(2,2,2)
+    print(a1)
+    print(a2)
+    print(a3)
+
+    # ndim
+    print(a1.ndim)  # Number of dimensions
+    print(a2.ndim)
+    print(a3.ndim)
+
+    # shape
+    print(a1.shape)# Number of elements in each dimension
+    print(a2.shape)
+    print(a3.shape)
+
+    # size
+    print(a1.size)# Total number of elements in the array
+    print(a2.size)
+    print(a3.size)
+
+    # itemsize
+    print(a1.itemsize)  # Size of each element in bytes
+    print(a2.itemsize)
+    print(a3.itemsize)
+
+    # dtype
+    print(a1.dtype)  # Data type of the elements
+    print(a2.dtype)
+    print(a3.dtype)
+
+def changing_datatype_of_numpy_array():
+    a1  = np.arange(10,dtype=int)
+    print(a1.astype(float))  # Change the data type to float or any datatype you want to change to
+
+changing_datatype_of_numpy_array()
+
