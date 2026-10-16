@@ -1,49 +1,71 @@
 # learning numpy library and learned creating arrays
 import numpy as np
-# 1-D array
-a = np.array([1,2,3,])
-print(type(a))
+def creating_array_using_numpy():
+    # 1-D array
+    a = np.array([1,2,3,])
+    print(type(a))
 
-#2-D array
-b = np.array([[1,2,3],[4,5,6]])
-print(b)
+    #2-D array
+    b = np.array([[1,2,3],[4,5,6]])
+    print(b)
 
-#3-D array
-c = np.array([[1,2,3],[4,5,6],[7,8,9]])
-print(c)
+    #3-D array
+    c = np.array([[[1,2,3],[4,5,6],[7,8,9]]])
+    print(c)
 
-#4-D array
-A1 = np.array([[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]])
-print(A1)
+    #4-D array
+    A1 = np.array([[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]])
+    print(A1)
 
+    #dtype
+    D = np.array([1,2,3],dtype=float)
+    print(D)
 
-#dtype
-D = np.array([1,2,3],dtype=float)
-print(D)
+    #np.arange
+    rang = np.arange(1,11)
+    print(rang)
 
-#np.arange
-rang = np.arange(1,11)
-print(rang)
+    #np.arange with reshape
+    rang1 = np.arange(1,11).reshape(5,2)
+    print(rang1)
 
-#np.arange with reshape
-rang1 = np.arange(1,11).reshape(5,2)
-print(rang1)
+    #np.ones and np.zeros
+    one = np.ones((3,4))
+    print(one)
+    zero = np.zeros((3,3))
+    print(zero)
 
-#np.ones and np.zeros
-one = np.ones((3,4))
-print(one)
-zero = np.zeros((3,3))
-print(zero)
+    #np.random
+    x = np.random.random((3,3))
+    print(x)
 
-#np.random
-x = np.random.random((3,3))
-print(x)
+    #np.linspace
+    y = np.linspace(-5,5,3)
+    print(y)
 
-#np.linspace
-y = np.linspace(-5,5,3)
-print(y)
+    #np.identity
+    z = np.identity(4)
+    print(z)
 
-#np.identity
-z = np.identity(4)
-print(z)
+def array_indexing_using_numpy():
+    #array indexing
+    arr = np.array([1,2,3,4,5])
+    print(arr[0])  # Access the first element
+    print(arr[-1])  # Access the last element
+    print(arr[1:4])  # Access elements from index 1 to 3
+    print(arr[3] + arr[4])# Access elements at index 3 and 4 and add them
 
+    #accessing 2-D array
+    arr2d = np.array([[1,2,3,4,5],[6,7,8,9,10]])
+    print(arr2d[0, 1])  # Access the element at row 0, column 1
+    print(arr2d[1, 3])  # Access the element at row 1, column 3
+
+    #accessing 3-D array
+    arr3d = np.array([[[1,2,3],[4,5,6],[7,8,9]]])
+    print(arr3d)
+    print(arr3d[0, 1, 2])# Access the element at depth 0, row 1, column 2
+
+    #negative indexing
+    print(arr2d[1, -1])# Access the last element of the second row
+    
+array_indexing_using_numpy()
