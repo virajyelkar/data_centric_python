@@ -7,6 +7,8 @@
     HOW TO RUN:
     Simply run the script in your terminal. You do not need to uncomment anything!
     An interactive menu will ask you to enter a choice from 1 to 6 to test different blocks.
+    
+    i will keep adding more examples to this file as I learn more about the NumPy library.
 """
 
 import numpy as np
