@@ -35,39 +35,39 @@ def creating_array_using_numpy():
 
     #dtype
     print("\n============check datatype of array=============")
-    D = np.array([1,2,3],dtype=float)
+    D = np.array([1,2,3],dtype=float)#to specify the datatype of the array, you can use the dtype parameter while creating the array
     print(D)
 
     #np.arange
     print("\n====================arange function==================")
-    rang = np.arange(1,11)
+    rang = np.arange(1,11)#to create an array with a range of numbers, you can use the np.arange() function. It takes three parameters: start, stop, and step. The start parameter is the first number in the range, the stop parameter is the last number in the range (exclusive), and the step parameter is the difference between each number in the range.
     print(rang)
 
     #np.arange with reshape
     print("\n=========arange with reshape=============")
-    rang1 = np.arange(1,11).reshape(5,2)
+    rang1 = np.arange(1,11).reshape(5,2) #we can also use the reshape() function to change the shape of the array.
     print(rang1)
 
     #np.ones and np.zeros
     print("\n=======np.once and np.zeros========")
-    one = np.ones((3,4))
+    one = np.ones((3,4))#np.ones() function creates an array filled with ones.
     print(one)
-    zero = np.zeros((3,3))
+    zero = np.zeros((3,3))#np.zeros() function creates an array filled with zeros.
     print(zero)
 
     #np.random
     print("\n=========np.random============")
-    x = np.random.random((3,3))
+    x = np.random.random((3,3)) #np.random.random() function creates an array filled with random numbers between 0 and 1. The parameter is the shape of the array.
     print(x)
 
     #np.linspace
     print("\n===========linespace==============")
-    y = np.linspace(-5,5,3)
+    y = np.linspace(-5,5,3)#np.linspace() function creates an array with a specified number of evenly spaced values between two endpoints.
     print(y)
 
     #np.identity
     print("\n===========np.identity=============")
-    z = np.identity(4)
+    z = np.identity(4) #np.identity() function creates a square identity matrix of a specified size.
     print(z)
 
 def array_indexing_using_numpy():
@@ -141,7 +141,7 @@ def changing_datatype_of_numpy_array():
 
 #array operations
 def array_operations():
-    a1 = np.arange(12).reshape(3,4)
+    a1 = np.arange(12).reshape(3,4) #this will create a 3x4 array with values from 0 to 11
     a2 = np.arange(12,24).reshape(3,4)
 
     #scalar operation
