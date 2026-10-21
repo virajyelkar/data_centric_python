@@ -1,44 +1,51 @@
 # Mastering Data-Centric Python & AI Research Pipeline
 
-Welcome to my repository tracking my journey into machine learning, data engineering, and applied AI research. This repository serves as the engineering engine for my Master's thesis at Gujarat Vidyapith under the guidance of Dr. Bhavin Patel.
+Welcome to my repository tracking my journey into machine learning, data engineering, and applied AI research. This repository serves as the core engineering engine for my Master's thesis at Gujarat Vidyapith under the guidance of Dr. Bhavin Patel.
 
-My current milestone is a high-velocity 2-week sprint leading up to **26 October**, focused on mastering data-centric Python frameworks while locking down my literature review and education datasets.
+My current milestone is a high-velocity 2-week sprint leading up to **26 October**, focused on mastering data-centric Python matrices while locking down my literature review and education datasets.
 
 ## 🚀 Active Roadmap & Milestone Progress
-- [x] Set up local development environment on ASUS TUF F17
-- [x] Complete basic NumPy matrix and multi-dimensional array operations
-- [ ] Master exploratory data manipulation using Pandas DataFrames
-- [ ] Implement data visualizations using Matplotlib & Seaborn
-- [ ] Finalize "AI for Education" research dataset and problem statement
+- [x] Set up local development environment on ASUS TUF F17 laptop
+- [x] Master NumPy fundamentals (Array creation, indexing, attributes, operations)
+- [x] Independently implement multi-dimensional array iteration using nested loops
+- [x] Finalize unique "AI for Education" research gap via Elsevier LeapSpace
+- [ ] Master exploratory data manipulation using Pandas DataFrames *(Vacation Target)*
+- [ ] Finalize the core student psychological and mental health dataset tracking
 
 ---
 
 ## 📂 Repository Contents & Key Learning Logs
 
 ### 🔢 1. Numerical Computing with NumPy (`/numpy_basics`)
-This module tracks my implementation of multi-dimensional vector math and array operations, which form the mathematical backbone of neural networks.
+This module tracks my custom script implementations of multi-dimensional vector math and array arrays, forming the structural backbone of neural networks.
 * **Core Skills Implemented:** 
-  * Instantiating 1D, 2D, 3D, and 4D arrays from scratch.
-  * Understanding matrix shapes, dimensions, and structural properties.
-  * *Next Step:* Slicing, indexing, and vector processing.
+  * Instantiating 1D, 2D, 3D, and 4D array matrices from scratch.
+  * Checking memory sizes, dimensions (`ndim`), shapes, and dynamically casting datatypes via `.astype()`.
+  * Executing element-wise arithmetic, scalar, and relational vector comparisons.
+  * Deep array iteration using nested `for` loop layers to traverse 3-D spaces.
+* **Architecture Design:** Refactored the entire script into a clean, interactive, user-driven console menu pipeline to eliminate chaotic terminal output.
 
-### 🐼 2. Data Manipulation with Pandas *(Upcoming)*
-* Track data loading (CSVs, JSONs), row/column filtering, feature alignment, and missing value management.
-
-### 📊 3. Visualizations with Matplotlib & Seaborn *(Upcoming)*
-* Engineering clean graphical plots, distributions, and correlation matrices for publication-ready papers.
+### 🐼 2. Data Science Tools & Datasets *(Upcoming)*
+* **Pandas:** Tracking raw CSV file ingestion, missing cell identification (`.isnull()`), feature filtering, and row grouping blocks.
+* **Matplotlib & Seaborn:** Generating publication-grade statistical graphics and correlation metrics for our research papers.
 
 ---
 
-## 🛠️ Environment & Tools
-* **Hardware Setup:** ASUS TUF F17 Laptop (NVIDIA Dedicated GPU)
+## 🔬 Thesis Track: Predicting Student Dropout via Psychological Strain
+* **The Verified Research Gap:** Traditional early-warning analytics rely strictly on late-stage academic records (midterms, quiz counts) and LMS login clicks. Direct psychological variables like student anxiety, stress levels, depression metrics, and emotional burnout are completely under-explored as direct model predictors.
+* **The Goal:** Building an applied machine learning pipeline trained on student behavioral and mental health data to predict dropout risks early.
+
+---
+
+## 🛠️ Environment & Hardware Stack
+* **Machine Specs:** ASUS TUF F17 Laptop (NVIDIA Dedicated GPU)
 * **Core Language:** Python 3.x
-* **Core Frameworks:** NumPy, Pandas, Matplotlib, Seaborn
-* **Research Assistant Stack:** Elsevier LeapSpace & Scopus Database
+* **Primary Frameworks:** NumPy, Pandas, Matplotlib, Seaborn
+* **Research Assistant Stack:** Elsevier LeapSpace & Scopus Database Engine
 
 ---
 
 ## 💡 Learning in Public
 > *"The secret to building logic is breaking down computer architecture into step-by-step human concepts first."*
 
-I update this repository every single weekend after my focused deep-dive sessions at the library. Feel free to explore the folders, review the logic, or connect with me on [LinkedIn](YOUR_LINKEDIN_PROFILE_URL_HERE) to discuss applied AI, research innovation, or deep-tech startup ecosystems!
+I update this repository regularly during my focused library study sprints near my hostel. Feel free to explore the modules, audit my menu selection loops, or connect with me on [LinkedIn](YOUR_LINKEDIN_PROFILE_URL_HERE) to talk about data-centric engineering or applied AI research!
