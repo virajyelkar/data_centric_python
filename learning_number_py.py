@@ -183,19 +183,52 @@ def array_operations():
     print(a1 == a2)
     print(a1 != a2)
 
+# numpy array iteration example
+def array_iteration_example():
+    print("============array_iteration===========")
+    arr = np.array([1,2,3,4,5])
+    for i in arr:
+        print(i)
+
+    #iterating 2-D array
+    arr2 = np.arange(12).reshape(2,6) #this will create a 2-D array with shape (2,6)
+    print("\n========2-D Array Iteration==========")
+    for i in arr2:# iterate over each row of the 2-D array
+        print(i)
+
+    #iterating on each element of 2-D array
+    print("\n========Iterating on each element of 2-D array==========")
+    for i in arr2:# iterate over each row of the 2-D array
+        for j in i: # iterate over each element of the row
+            print(j)
+
+    #iterating 3-D array
+    print("\n========3-D Array Iteration==========")
+    arr3 = np.arange(24).reshape(2,3,4) #this will create a 3-D array with shape (2,3,4)
+    for i in arr3:
+        print(i)
+    #iterate down the scalar elements of the 3-D array
+    print("\n========Iterating on each element of 3-D array==========")
+    for i in arr3:# iterate over each 2-D array of the 3-D array
+        for j in i: # iterate over each row of the 2-D array
+            for k in j: # iterate over each element of the row
+                print(k)
+
 def main_menu():
-    while True:
+    while True: #this loop will keep running until the user chooses to exit
         print("\n==========numpy============")
         print("1. run array creation example ")
         print("2. run array indexing example")
         print("3. run array attributes check ")
         print("4. run changing datatype of array example")
         print("5. run array operations ")
-        print("6. exit menu")
+        print("6. run array iteration example")
+        print("7. exit menu")
 
         #taking input from user
-        choice = int(input("\nEnter your choice between(1-6) =>  "))
+        choice = int(input("\nEnter your choice between(1-7) =>  "))
 
+        #calling the functions based on user choice
         if choice == 1:
             creating_array_using_numpy()
         elif choice == 2:
@@ -207,6 +240,8 @@ def main_menu():
         elif choice == 5:
             array_operations()
         elif choice == 6:
+            array_iteration_example()
+        elif choice == 7:
             print("\nexiting library session workspace. keep building, bro! ")
             break #stops the loop and closes my numpy menu
         else:
