@@ -214,6 +214,21 @@ def array_iteration_example():
             for k in j: # iterate over each element of the row
                 print(k)
 
+def numpy_array_joining_example():
+    print("\n========numpy array joining example==========")
+    a1 = np.array([[1,2,3],[4,5,6]])
+    a2 = np.array([[7,8,9],[10,11,12]])
+    print("Array 1:", a1)
+    print("Array 2:", a2)
+
+    #joining two arrays along axis 0
+    print("\n========joining two arrays along axis 0==========")
+    print(np.concatenate((a1,a2),axis=0)) #this will join the two arrays along the first axis (rows)
+
+    #joining two arrays along axis 1
+    print("\n========joining two arrays along axis 1==========")
+    print(np.concatenate((a1,a2),axis=1)) #this will join the two arrays along the second axis (columns)
+
 def main_menu():
     while True: #this loop will keep running until the user chooses to exit
         print("\n==========numpy============")
@@ -223,10 +238,11 @@ def main_menu():
         print("4. run changing datatype of array example")
         print("5. run array operations ")
         print("6. run array iteration example")
-        print("7. exit menu")
+        print("7. run numpy array joining example")
+        print("8. exit menu")
 
         #taking input from user
-        choice = int(input("\nEnter your choice between(1-7) =>  "))
+        choice = int(input("\nEnter your choice between(1-8) =>  "))
 
         #calling the functions based on user choice
         if choice == 1:
@@ -242,10 +258,12 @@ def main_menu():
         elif choice == 6:
             array_iteration_example()
         elif choice == 7:
+            numpy_array_joining_example()
+        elif choice == 8:
             print("\nexiting library session workspace. keep building, bro! ")
             break #stops the loop and closes my numpy menu
         else:
-            print("\n[invalid choice] please type a number between 1 to 6.")
+            print("\n[invalid choice] please type a number between 1 to 8.")
 
 #this line starts the menu when you run my code
 main_menu()
