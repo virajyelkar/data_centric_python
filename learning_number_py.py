@@ -164,7 +164,7 @@ def array_operations():
     print(a1 - a2)
     print(a1 * a2)
     print(a1 / a2)
-    
+
     #relational operations
     print("\n===========relation operation with array and numbers=============")
     print(a2 > 15)
@@ -218,8 +218,6 @@ def numpy_array_joining_example():
     print("\n========numpy array joining example==========")
     a1 = np.array([[1,2,3],[4,5,6]])
     a2 = np.array([[7,8,9],[10,11,12]])
-    print("Array 1:", a1)
-    print("Array 2:", a2)
 
     #joining two arrays along axis 0
     print("\n========joining two arrays along axis 0==========")
@@ -228,6 +226,27 @@ def numpy_array_joining_example():
     #joining two arrays along axis 1
     print("\n========joining two arrays along axis 1==========")
     print(np.concatenate((a1,a2),axis=1)) #this will join the two arrays along the second axis (columns)
+
+def array_splitting_example():
+    arr = np.array([1,2,3,4,5,6,7,8,9,10])
+    #splitting an array into 2 equal parts
+    print("\n========splitting an array into 2 equal parts==========")
+    print(np.array_split(arr, 2)) #this will split the array into 2 equal parts
+
+    #accessing the first part of the split array
+    print("\n========accessing the first part of the split array==========")
+    print(np.array_split(arr, 2)[0]) #this will access the first part of the split array
+    print(np.array_split(arr, 2)[1])
+
+    #splitting 2-D array into 2 equal parts
+    arr2d = np.array([[1,2],[3,4],[5,6],[7,8]])
+    print("\n========splitting 2-D array into 2 equal parts==========")
+    newarr = np.array_split(arr2d, 2) #this will split the 2-D array into 2 equal parts
+    print(newarr)
+
+    #splitting 2-D array into 2-d array along columns
+    print("\n========splitting 2-D array into 3 equal parts==========")
+    print(np.array_split(arr2d, 3, axis=1)) #this will split the 2-D array into 3 equal parts along columns
 
 def main_menu():
     while True: #this loop will keep running until the user chooses to exit
@@ -239,10 +258,11 @@ def main_menu():
         print("5. run array operations ")
         print("6. run array iteration example")
         print("7. run numpy array joining example")
-        print("8. exit menu")
+        print("8. run numpy array splitting example")
+        print("9. exit menu")
 
         #taking input from user
-        choice = int(input("\nEnter your choice between(1-8) =>  "))
+        choice = int(input("\nEnter your choice between(1-9) =>  "))
 
         #calling the functions based on user choice
         if choice == 1:
@@ -260,10 +280,12 @@ def main_menu():
         elif choice == 7:
             numpy_array_joining_example()
         elif choice == 8:
+            array_splitting_example()
+        elif choice == 9:
             print("\nexiting library session workspace. keep building, bro! ")
             break #stops the loop and closes my numpy menu
         else:
-            print("\n[invalid choice] please type a number between 1 to 8.")
+            print("\n[invalid choice] please type a number between 1 to 9.")
 
 #this line starts the menu when you run my code
 main_menu()
