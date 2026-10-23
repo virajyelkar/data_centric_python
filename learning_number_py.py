@@ -214,6 +214,7 @@ def array_iteration_example():
             for k in j: # iterate over each element of the row
                 print(k)
 
+#numpy array joining example
 def numpy_array_joining_example():
     print("\n========numpy array joining example==========")
     a1 = np.array([[1,2,3],[4,5,6]])
@@ -227,6 +228,7 @@ def numpy_array_joining_example():
     print("\n========joining two arrays along axis 1==========")
     print(np.concatenate((a1,a2),axis=1)) #this will join the two arrays along the second axis (columns)
 
+#numpy array splitting example
 def array_splitting_example():
     arr = np.array([1,2,3,4,5,6,7,8,9,10])
     #splitting an array into 2 equal parts
@@ -248,6 +250,23 @@ def array_splitting_example():
     print("\n========splitting 2-D array into 3 equal parts==========")
     print(np.array_split(arr2d, 3, axis=1)) #this will split the 2-D array into 3 equal parts along columns
 
+#array searching example
+def array_searching_example():
+    print("\n========array searching example==========")
+    a1 = np.array([1,2,3,4,5,6,7,8,9,10])
+    x = np.where(a1 == 5) #where function is you to search
+    print(x)
+
+    #search sorted array
+    print("\n========search sorted array==========")
+    y = np.searchsorted(a1, 5) #searchsorted function is used to find the index where the value should be inserted to maintain the order of the array
+    print(y)
+
+    #search multiple values in an array
+    print("\n========search multiple values in an array==========")
+    z = np.searchsorted(a1, [3, 7]) #this find multiple values in array
+    print(z)
+
 def main_menu():
     while True: #this loop will keep running until the user chooses to exit
         print("\n==========numpy============")
@@ -259,10 +278,11 @@ def main_menu():
         print("6. run array iteration example")
         print("7. run numpy array joining example")
         print("8. run numpy array splitting example")
-        print("9. exit menu")
+        print("9. run numpy array searching example ")
+        print("10. exit menu")
 
         #taking input from user
-        choice = int(input("\nEnter your choice between(1-9) =>  "))
+        choice = int(input("\nEnter your choice between(1-10) =>  "))
 
         #calling the functions based on user choice
         if choice == 1:
@@ -282,6 +302,8 @@ def main_menu():
         elif choice == 8:
             array_splitting_example()
         elif choice == 9:
+            array_searching_example()
+        elif choice == 10:
             print("\nexiting library session workspace. keep building, bro! ")
             break #stops the loop and closes my numpy menu
         else:
