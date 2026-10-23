@@ -1,14 +1,22 @@
 """
-    # Learning NumPy Library: Arrays, Indexing, Attributes, Datatypes & Operations
+    # Learning NumPy Library: Master Workspace Engine
 
-    This is an interactive, menu-driven Python script tracking my progress with the NumPy library.
-    It covers array creation, indexing mechanics, memory attributes, and element operations.
+    This is an interactive, menu-driven Python application tracking my progress with the NumPy library.
+    It serves as the foundational data-centric computing pipeline for my Master's research under Dr. Bhavin Patel.
+
+    FEATURES COVERED:
+    1. Array Creation & Manipulation (1D to 4D matrices, linspace, identity vectors)
+    2. Matrix Indexing & Slicing (Positive, negative, and multi-dimensional coordinate access)
+    3. Memory Attributes Inspection (ndim, shape, size, itemsize, dtype)
+    4. Dynamic Memory Type Casting (.astype transformations)
+    5. Vector & Array Operations (Scalar math, element-wise arithmetic, relational matrices)
+    6. Multi-dimensional Traversal (Nested loop array iteration logs)
+    7. Matrix Reshaping Blocks (Joining via concatenate, array splitting, index searching via where)
+    8. Linear Algebra Engines (Vector scaling, 4-way dot products, cross products, matrix-vector multiplication)
 
     HOW TO RUN:
-    Simply run the script in your terminal. You do not need to uncomment anything!
-    An interactive menu will ask you to enter a choice from 1 to 6 to test different blocks.
-    
-    i will keep adding more examples to this file as I learn more about the NumPy library.
+    Execute the script directly in your terminal command prompt. 
+    An interactive console menu wrapper will automatically launch to let you choose exactly which block to run.
 """
 
 import numpy as np
@@ -267,6 +275,53 @@ def array_searching_example():
     z = np.searchsorted(a1, [3, 7]) #this find multiple values in array
     print(z)
 
+    """
+        vector maths and matrix operations
+    """
+def vector_matrix_operations():
+    #vector scaling
+    print("\n========vector scaling==========")
+    v1 = np.array([1, 2, 3])
+    print(v1 * 5) # Scale the vector by multiplying each element by 5
+
+    #element-wise vector multiplication
+    v2 = np.array([4, 5, 6])
+    print("\n========element-wise vector multiplication==========")
+    print(v1 * v2) # Element-wise multiplication of two vectors | result: [4, 10, 18]
+
+    #dot product of two vectors
+    dot_1 = np.dot(v1, v2) # Dot product of two vectors | result: 32
+    print("\n========dot product of two vectors==========")
+    print(dot_1)
+
+    dot_2 = v1 @ v2 # Dot product using the @ operator | result: 32
+    print("\n========dot product using @ operator==========")
+    print(dot_2)
+
+    dot_3 = np.sum(v1 * v2) # Dot product using element-wise multiplication and sum | result: 32
+    print("\n========dot product using element-wise multiplication and sum==========")
+    print(dot_3)
+
+    dot_4 = v1.dot(v2) # Dot product using the dot method of the array | result: 32
+    print("\n========dot product using dot method of the array==========")
+    print(dot_4)
+
+    #cross product(3D vectors only)
+    v3 = np.array([1, 2, 3])
+    v4 = np.array([4, 5, 6])
+    cross_product = np.cross(v3, v4) # Cross product of two 3 D vectors | result: [-3, 6, -3]
+    print("\n========cross product of two 3D vectors==========")
+    print(cross_product)
+
+    #matrix-vector multiplication
+    print("\n========matrix-vector multiplication==========")
+    matrix = np.arange(1,5).reshape(2,2) # Create a 2x2 matrix | result: [[1, 2], [3, 4]]
+    vector = np.array([5, 6]) # Create a vector | result: [5, 6]
+    result = matrix @ vector # Matrix-vector multiplication | result: [17, 39]
+    #calculated as follows:
+    # [1*5 + 2*6, 3*5 + 4*6] = [17, 39]
+    print(result)
+
 def main_menu():
     while True: #this loop will keep running until the user chooses to exit
         print("\n==========numpy============")
@@ -279,10 +334,11 @@ def main_menu():
         print("7. run numpy array joining example")
         print("8. run numpy array splitting example")
         print("9. run numpy array searching example ")
-        print("10. exit menu")
+        print("10. run vector and matrix operations example")
+        print("11. exit menu")
 
         #taking input from user
-        choice = int(input("\nEnter your choice between(1-10) =>  "))
+        choice = int(input("\nEnter your choice between(1-11) =>  "))
 
         #calling the functions based on user choice
         if choice == 1:
@@ -304,10 +360,16 @@ def main_menu():
         elif choice == 9:
             array_searching_example()
         elif choice == 10:
+            vector_matrix_operations()
+        elif choice == 11:
             print("\nexiting library session workspace. keep building, bro! ")
             break #stops the loop and closes my numpy menu
         else:
-            print("\n[invalid choice] please type a number between 1 to 9.")
+            print("\n[invalid choice] please type a number between 1 to 11.")
 
 #this line starts the menu when you run my code
 main_menu()
+
+"""
+ this is the end of my numpy library learning code. I will keep adding more features to this code as I learn more about numpy and its applications in data science and machine learning.
+"""
