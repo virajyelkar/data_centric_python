@@ -2,13 +2,15 @@
 
 Welcome to my repository tracking my journey into machine learning, data engineering, and applied AI research. This repository serves as the core engineering engine for my Master's thesis at Gujarat Vidyapith under the guidance of Dr. Bhavin Patel.
 
-My current milestone is a high-velocity 2-week sprint leading up to **26 October**, focused on mastering data-centric Python matrices while locking down my literature review and education datasets.
+My current milestone is a high-velocity 2-week sprint leading up to **26 October**, focused on mastering data-centric Python matrices while locking down my literature review and education datasets [‡].
 
 ## 🚀 Active Roadmap & Milestone Progress
 - [x] Set up local development environment on ASUS TUF F17 laptop
 - [x] Master NumPy fundamentals (Array creation, indexing, attributes, operations)
-- [x] Independently implement multi-dimensional array iteration using nested loops
-- [x] Finalize unique "AI for Education" research gap via Elsevier LeapSpace
+- [x] Independently implement multi-dimensional array iteration using nested loops (via W3Schools)
+- [x] Integrate advanced matrix reshaping (Concatenation, splitting, and `np.where` searching)
+- [x] Conquered linear algebra engines (Vector scaling, cross products, and 4-way dot products)
+- [x] Finalize unique "AI for Education" research gap via Elsevier LeapSpace [‡]
 - [ ] Master exploratory data manipulation using Pandas DataFrames *(Vacation Target)*
 - [ ] Finalize the core student psychological and mental health dataset tracking
 
@@ -17,17 +19,18 @@ My current milestone is a high-velocity 2-week sprint leading up to **26 October
 ## 📂 Repository Contents & Key Learning Logs
 
 ### 🔢 1. Numerical Computing with NumPy (`/numpy_basics`)
-This module tracks my custom script implementations of multi-dimensional vector math and array arrays, forming the structural backbone of neural networks.
+This module tracks my custom script implementations of multi-dimensional vector math and array grids, forming the structural backbone of neural networks.
 * **Core Skills Implemented:** 
   * Instantiating 1D, 2D, 3D, and 4D array matrices from scratch.
   * Checking memory sizes, dimensions (`ndim`), shapes, and dynamically casting datatypes via `.astype()`.
   * Executing element-wise arithmetic, scalar, and relational vector comparisons.
-  * Deep array iteration using nested `for` loop layers to traverse 3-D spaces.
-* **Architecture Design:** Refactored the entire script into a clean, interactive, user-driven console menu pipeline to eliminate chaotic terminal output.
+  * Structural matrix transformations: Joining along axes (`axis=0/1`), array splitting, and value searching using `np.where` / `np.searchsorted`.
+  * Advanced Vector Math: Vector scaling, cross products, and computing dot products using four different algorithmic methods (including the matrix `@` operator).
+* **Architecture Design:** Refactored the entire script into a multi-branch, interactive console menu engine managed by a continuous `while` execution loop.
 
-### 🐼 2. Data Science Tools & Datasets *(Upcoming)*
-* **Pandas:** Tracking raw CSV file ingestion, missing cell identification (`.isnull()`), feature filtering, and row grouping blocks.
-* **Matplotlib & Seaborn:** Generating publication-grade statistical graphics and correlation metrics for our research papers.
+### 🐼 2. Data Science Tools & Datasets *(Upcoming Vacation Sprint)*
+* **Pandas:** Tracking raw CSV file ingestion, summary metrics (`.describe()`), feature filtering, and row grouping blocks.
+* **Matplotlib & Seaborn:** Generating publication-grade statistical graphics and correlation matrices for our research papers.
 
 ---
 
@@ -48,4 +51,4 @@ This module tracks my custom script implementations of multi-dimensional vector 
 ## 💡 Learning in Public
 > *"The secret to building logic is breaking down computer architecture into step-by-step human concepts first."*
 
-I update this repository regularly during my focused library study sprints near my hostel. Feel free to explore the modules, audit my menu selection loops, or connect with me on [LinkedIn](YOUR_LINKEDIN_PROFILE_URL_HERE) to talk about data-centric engineering or applied AI research!
+I update this repository regularly during my focused library study sprints near my hostel. Feel free to explore the modules, audit my menu selection loops, or connect with me on [LinkedIn](https://linkedin.com/in/viraj-yelkar-b7a495284) to talk about data-centric engineering or applied AI research!
