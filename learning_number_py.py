@@ -202,35 +202,70 @@ def array_attribute():
     print(a2)
     print(a3)
 
-    # ndim
-    print("\n========number of dimensions using 'ndim'===========")
-    print(a1.ndim)  # Number of dimensions
-    print(a2.ndim)
-    print(a3.ndim)
+    def number_of_dimensions(a1, a2, a3):
+        # ndim
+        print("\n========number of dimensions using 'ndim'===========")
+        print(a1.ndim)  # Number of dimensions
+        print(a2.ndim)
+        print(a3.ndim)
 
-    # shape
-    print("\n=====number of elements in each dimension using 'shape'=======")
-    print(a1.shape)# Number of elements in each dimension
-    print(a2.shape)
-    print(a3.shape)
+    def shape_of_array(a1, a2, a3):
+        # shape
+        print("\n=====number of elements in each dimension using 'shape'=======")
+        print(a1.shape)# Number of elements in each dimension
+        print(a2.shape)
+        print(a3.shape)
 
-    # size
-    print("\n ==========total number of elements in the array using 'size'=============")
-    print(a1.size)# Total number of elements in the array
-    print(a2.size)
-    print(a3.size)
+    def size_of_array(a1, a2, a3):
+        # size
+        print("\n ==========total number of elements in the array using 'size'=============")
+        print(a1.size)# Total number of elements in the array
+        print(a2.size)
+        print(a3.size)
 
-    # itemsize
-    print("\n========size of each element in bytes using 'itemsize'=============")
-    print(a1.itemsize)  # Size of each element in bytes
-    print(a2.itemsize)
-    print(a3.itemsize)
+    def size_of_each_element(a1, a2, a3):
+        # itemsize
+        print("\n========size of each element in bytes using 'itemsize'=============")
+        print(a1.itemsize)  # Size of each element in bytes
+        print(a2.itemsize)
+        print(a3.itemsize)
 
-    # dtype
-    print("\n========data type of the elements using 'dtype'==================")
-    print(a1.dtype)  # Data type of the elements
-    print(a2.dtype)
-    print(a3.dtype)
+    def data_type_of_elements(a1, a2, a3):
+        # dtype
+        print("\n========data type of the elements using 'dtype'==================")
+        print(a1.dtype)  # Data type of the elements
+        print(a2.dtype)
+        print(a3.dtype)
+
+    def main_menu_of_array_attribute():
+        while True:
+            print("\n========menu of array attribute===========")
+            print("1. run number of dimensions ")
+            print("2. run shape of array ")
+            print("3. run size of array ")
+            print("4. run size of each element ")
+            print("5. run data type of elements ")
+            print("6. exit the main menu of array attribute ")
+
+            
+            #taking input from user
+            choice = int(input("Enter your choice between(1-6)=> "))
+
+            if choice == 1:
+                number_of_dimensions(a1, a2, a3)
+            elif choice == 2:
+                shape_of_array(a1, a2, a3)
+            elif choice == 3:
+                size_of_array(a1, a2, a3)
+            elif choice == 4:
+                size_of_each_element(a1, a2, a3)
+            elif choice == 5:
+                data_type_of_elements(a1, a2, a3)
+            elif choice == 6:
+                print("\nexited the main menu of array attribute")
+                break
+            else:
+                print("\n[invalid choice] please enter your choice between 1-6")
 
 def changing_datatype_of_numpy_array():
     print("\n=====change the datatype==========")
@@ -242,44 +277,78 @@ def array_operations():
     a1 = np.arange(12).reshape(3,4) #this will create a 3x4 array with values from 0 to 11
     a2 = np.arange(12,24).reshape(3,4)
 
-    #scalar operation
-    print("\n=========scholar operation========")
-    print(a1 * 2)# Multiply each element of a1 by 2
+    def scalar_operation(a1,a2):
+        #scalar operation
+        print("\n=========scholar operation========")
+        print(a1 * 2)# Multiply each element of a1 by 2
 
-    #arithmetic operations
-    print("\n=======arithmetic operation with array and number===========")
-    print(a1 + 2)
-    print(a1 - 2)
-    print(a1 * 2)
-    print(a1 / 2)
-    print(a1 % 2)
-    print(a1 ** 2)
-    print(a1 // 2)
+    def array_arithmetic(a1,a2):
+        #arithmetic operations
+        print("\n=======arithmetic operation with array and number===========")
+        print(a1 + 2)
+        print(a1 - 2)
+        print(a1 * 2)
+        print(a1 / 2)
+        print(a1 % 2)
+        print(a1 ** 2)
+        print(a1 // 2)
 
-    #arithmetic operations between two arrays
-    print("\n========arithmetic operation between two arrays=========")
-    print(a1 + a2)
-    print(a1 - a2)
-    print(a1 * a2)
-    print(a1 / a2)
+    def array_arithmetic_between_two_arrays(a1,a2):
+        #arithmetic operations between two arrays
+        print("\n========arithmetic operation between two arrays=========")
+        print(a1 + a2)
+        print(a1 - a2)
+        print(a1 * a2)
+        print(a1 / a2)
 
-    #relational operations
-    print("\n===========relation operation with array and numbers=============")
-    print(a2 > 15)
-    print(a2 < 15)
-    print(a2 >= 15)
-    print(a2 <= 15)
-    print(a2 == 15)
-    print(a2 != 15)
+    def relational_operations(a2):
+        #relational operations
+        print("\n===========relation operation with array and numbers=============")
+        print(a2 > 15)
+        print(a2 < 15)
+        print(a2 >= 15)
+        print(a2 <= 15)
+        print(a2 == 15)
+        print(a2 != 15)
 
-    #relational operations between two arrays
-    print("\n========relational operations between two arrays==========")
-    print(a1 > a2)
-    print(a1 < a2)
-    print(a1 >= a2)
-    print(a1 <= a2)
-    print(a1 == a2)
-    print(a1 != a2)
+    def relational_operations_between_two_arrays(a1,a2):
+        #relational operations between two arrays
+        print("\n========relational operations between two arrays==========")
+        print(a1 > a2)
+        print(a1 < a2)
+        print(a1 >= a2)
+        print(a1 <= a2)
+        print(a1 == a2)
+        print(a1 != a2)
+    
+    def main_menu_of_array_operations():
+        while True:
+            print("\n========menu of array operations===========")
+            print("1. run scalar operation ")
+            print("2. run arithmetic operation with array and number ")
+            print("3. run arithmetic operation between two arrays ")
+            print("4. run relational operation with array and numbers ")
+            print("5. run relational operations between two arrays ")
+            print("6. exit the main menu of array operations ")
+
+            #taking input from user
+            choice = int(input("Enter your choice between(1-6)=> "))
+
+            if choice == 1:
+                scalar_operation(a1,a2)
+            elif choice == 2:
+                array_arithmetic(a1,a2)
+            elif choice == 3:
+                array_arithmetic_between_two_arrays(a1,a2)
+            elif choice == 4:
+                relational_operations(a2)
+            elif choice == 5:
+                relational_operations_between_two_arrays(a1,a2)
+            elif choice == 6:
+                print("\nexited the main menu of array operations")
+                break
+            else:
+                print("\n[invalid choice] please enter your choice between 1-6")
 
 # numpy array iteration example
 def array_iteration_example():
