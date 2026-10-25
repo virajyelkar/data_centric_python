@@ -21,88 +21,178 @@
 
 import numpy as np
 def creating_array_using_numpy():
-    # 1-D array
-    print("\n============1-D array =============")
-    a = np.array([1,2,3,])
-    print(type(a))
+    def array_1D_creation():
+        # 1-D array
+        print("\n============1-D array =============")
+        a = np.array([1,2,3,])
+        print(a)
 
-    #2-D array
-    print("\n===============2-D array ============")
-    b = np.array([[1,2,3],[4,5,6]])
-    print(b)
+    def array_2D_creation():
+        #2-D array
+        print("\n===============2-D array ============")
+        b = np.array([[1,2,3],[4,5,6]])
+        print(b)
 
-    #3-D array
-    print("\n================3-D array=============")
-    c = np.array([[[1,2,3],[4,5,6],[7,8,9]]])
-    print(c)
+    def array_3D_creation():
+        #3-D array
+        print("\n================3-D array=============")
+        c = np.array([[[1,2,3],[4,5,6],[7,8,9]]])
+        print(c)
 
-    #4-D array
-    print("\n===================4-D array===============")
-    A1 = np.array([[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]])
-    print(A1)
+    def array_4D_creation():
+        #4-D array
+        print("\n===================4-D array===============")
+        A1 = np.array([[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]])
+        print(A1)
 
-    #dtype
-    print("\n============check datatype of array=============")
-    D = np.array([1,2,3],dtype=float)#to specify the datatype of the array, you can use the dtype parameter while creating the array
-    print(D)
+    def to_specify_datatype():
+        #dtype
+        print("\n============check datatype of array=============")
+        D = np.array([1,2,3],dtype=float)#to specify the datatype of the array, you can use the dtype parameter while creating the array
+        print(D)
 
-    #np.arange
-    print("\n====================arange function==================")
-    rang = np.arange(1,11)#to create an array with a range of numbers, you can use the np.arange() function. It takes three parameters: start, stop, and step. The start parameter is the first number in the range, the stop parameter is the last number in the range (exclusive), and the step parameter is the difference between each number in the range.
-    print(rang)
+    def creating_array_using_arange():
+        #np.arange
+        print("\n====================arange function==================")
+        rang = np.arange(1,11)#to create an array with a range of numbers, you can use the np.arange() function. It takes three parameters: start, stop, and step. The start parameter is the first number in the range, the stop parameter is the last number in the range (exclusive), and the step parameter is the difference between each number in the range.
+        print(rang)
 
-    #np.arange with reshape
-    print("\n=========arange with reshape=============")
-    rang1 = np.arange(1,11).reshape(5,2) #we can also use the reshape() function to change the shape of the array.
-    print(rang1)
+    def arange_with_reshape():
+        #np.arange with reshape
+        print("\n=========arange with reshape=============")
+        rang1 = np.arange(1,11).reshape(5,2) #we can also use the reshape() function to change the shape of the array.
+        print(rang1)
 
-    #np.ones and np.zeros
-    print("\n=======np.once and np.zeros========")
-    one = np.ones((3,4))#np.ones() function creates an array filled with ones.
-    print(one)
-    zero = np.zeros((3,3))#np.zeros() function creates an array filled with zeros.
-    print(zero)
+    def ones_and_zeros_func():
+        #np.ones and np.zeros
+        print("\n=======np.once and np.zeros========")
+        one = np.ones((3,4))#np.ones() function creates an array filled with ones.
+        print(one)
+        zero = np.zeros((3,3))#np.zeros() function creates an array filled with zeros.
+        print(zero)
 
-    #np.random
-    print("\n=========np.random============")
-    x = np.random.random((3,3)) #np.random.random() function creates an array filled with random numbers between 0 and 1. The parameter is the shape of the array.
-    print(x)
+    def random():
+        #np.random
+        print("\n=========np.random============")
+        x = np.random.random((3,3)) #np.random.random() function creates an array filled with random numbers between 0 and 1. The parameter is the shape of the array.
+        print(x)
 
-    #np.linspace
-    print("\n===========linespace==============")
-    y = np.linspace(-5,5,3)#np.linspace() function creates an array with a specified number of evenly spaced values between two endpoints.
-    print(y)
+    def creating_array_with_linspace():
+        #np.linspace
+        print("\n===========linespace==============")
+        y = np.linspace(-5,5,3)#np.linspace() function creates an array with a specified number of evenly spaced values between two endpoints.
+        print(y)
 
-    #np.identity
-    print("\n===========np.identity=============")
-    z = np.identity(4) #np.identity() function creates a square identity matrix of a specified size.
-    print(z)
+    def creating_array_with_identity():
+        #np.identity
+        print("\n===========np.identity=============")
+        z = np.identity(4) #np.identity() function creates a square identity matrix of a specified size.
+        print(z)
+
+    def main_menu_of_creating_array():
+        while True:
+            print("\n============main menu of creating array==============")
+            print("1. create 1-D array  ")
+            print("2. create 2-D array ")
+            print("3. create 3-D array  ")
+            print("4. create 4-D array  ")
+            print("5. run dtype function ")
+            print("6. run creating array using arange ")
+            print("7. run crearing array using arange wiht reshape ")
+            print("8. run ones and zeros func")
+            print("9. run random function ")
+            print("10. run creating array with linspace")
+            print("11. run creating array using identity function")
+            print("12. exit the main menu of creating array ")
+
+            choice = int(input("enter your choice between(1-12)=> "))
+
+            if choice == 1:
+                array_1D_creation()
+            elif choice == 2:
+                array_2D_creation()
+            elif choice == 3:
+                array_3D_creation()
+            elif choice == 4:
+                array_4D_creation()
+            elif choice == 5:
+                to_specify_datatype()
+            elif choice == 6:
+                creating_array_using_arange()
+            elif choice == 7:
+                arange_with_reshape()
+            elif choice == 8:
+                ones_and_zeros_func()
+            elif choice == 9:
+                random()
+            elif choice == 10:
+                creating_array_with_linspace()
+            elif choice == 11:
+                creating_array_with_identity()
+            elif choice == 12:
+                print("\nexiting the menu ")
+                break
+            else:
+                print("\n[invalid choice] please enter number between 1-12")
+    main_menu_of_creating_array()
 
 def array_indexing_using_numpy():
-    #array indexing
-    print("\n=======array indexing=======")
-    arr = np.array([1,2,3,4,5])
-    print(arr[0])  # Access the first element
-    print(arr[-1])  # Access the last element
-    print(arr[1:4])  # Access elements from index 1 to 3
-    print(arr[3] + arr[4])# Access elements at index 3 and 4 and add them
+    def array_indexing():
+        #array indexing
+        print("\n=======array indexing=======")
+        arr = np.array([1,2,3,4,5])
+        print(arr)
+        print(arr[0])  # Access the first element
+        print(arr[-1])  # Access the last element
+        print(arr[1:4])  # Access elements from index 1 to 3
+        print(arr[3] + arr[4])# Access elements at index 3 and 4 and add them
 
-    #accessing 2-D array
-    print("\n=======accessing 2-D array==========")
-    arr2d = np.array([[1,2,3,4,5],[6,7,8,9,10]])
-    print(arr2d[0, 1])  # Access the element at row 0, column 1
-    print(arr2d[1, 3])  # Access the element at row 1, column 3
+    def accessing_2D_array():
+        #accessing 2-D array
+        print("\n=======accessing 2-D array==========")
+        arr2d = np.array([[1,2,3,4,5],[6,7,8,9,10]])
+        print(arr2d[0, 1])  # Access the element at row 0, column 1
+        print(arr2d[1, 3])  # Access the element at row 1, column 3
 
-    #accessing 3-D array
-    print("\n========accessing 3-D array==========")
-    arr3d = np.array([[[1,2,3],[4,5,6],[7,8,9]]])
-    print(arr3d)
-    print(arr3d[0, 1, 2])# Access the element at depth 0, row 1, column 2
+    def accessing_3D_array():
+        #accessing 3-D array
+        print("\n========accessing 3-D array==========")
+        arr3d = np.array([[[1,2,3],[4,5,6],[7,8,9]]])
+        print(arr3d)
+        print(arr3d[0, 1, 2])# Access the element at depth 0, row 1, column 2
 
-    #negative indexing
-    print("\n========negative indexing===========")
-    print(arr2d[1, -1])# Access the last element of the second row
+    def negative_indexing():
+        #negative indexing
+        arr2d = np.array([[1,2,3,4,5],[6,7,8,9,10]])
+        print("\n========negative indexing===========")
+        print(arr2d)
+        print(arr2d[1, -1])# Access the last element of the second row
 
+    def main_menu_of_array_indexing():
+        while True:
+            print("\n=======menu of array indexing using numpy=======")
+            print("1. run array indexing ")
+            print("2. run accessing 2-D array ")
+            print("3. run accessing 3-D array ")
+            print("4. run negative indexing ")
+            print("5. exit the main menu of array indexing ")
+
+            choice = int(input("Enter your choice between(1-5)=> "))
+
+            if choice == 1:
+                array_indexing()
+            elif choice == 2:
+                accessing_2D_array()
+            elif choice == 3:
+                accessing_3D_array()
+            elif choice == 4:
+                negative_indexing()
+            elif choice == 5:
+                print("exited the main menu of array indexing ")
+                break
+            else:
+                print("\n[invalid choice] please enter your choice between 1-5 ")
+    main_menu_of_array_indexing()
 #array attribute
 def array_attribute():
     a1 = np.arange(10,dtype=int)
