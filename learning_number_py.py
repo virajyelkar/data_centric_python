@@ -266,6 +266,7 @@ def array_attribute():
                 break
             else:
                 print("\n[invalid choice] please enter your choice between 1-6")
+    main_menu_of_array_attribute()
 
 def changing_datatype_of_numpy_array():
     print("\n=====change the datatype==========")
@@ -349,6 +350,7 @@ def array_operations():
                 break
             else:
                 print("\n[invalid choice] please enter your choice between 1-6")
+    main_menu_of_array_operations()
 
 # numpy array iteration example
 def array_iteration_example():
@@ -411,6 +413,7 @@ def array_iteration_example():
                 break
             else:
                 print("\n[invalid choice] please enter your choice between 1-5")
+    main_menu_of_array_iteration()
 
 #numpy array joining example
 def numpy_array_joining_example():
@@ -447,6 +450,7 @@ def numpy_array_joining_example():
                 break
             else:
                 print("\n[invalid choice] please enter your choice between 1-3")
+    main_menu_of_numpy_array_joining()
 
 #numpy array splitting example
 def array_splitting_example():
@@ -473,7 +477,7 @@ def array_splitting_example():
     def splitting_2D_array_into_unequal_parts(arr2d):
         print("\n========splitting 2-D array into 3 equal parts==========")
         print(np.array_split(arr2d, 3, axis=1)) #this will split the 2-D array into 3 equal parts along columns
-    
+
     def main_menu_of_array_splitting():
         while True:
             print("\n========menu of numpy array splitting example==========")
@@ -499,6 +503,7 @@ def array_splitting_example():
                 break
             else:
                 print("\n[invalid choice] please enter your choice between 1-5")
+    main_menu_of_array_splitting()
 
 #array searching example
 def array_searching_example():
@@ -519,7 +524,7 @@ def array_searching_example():
         print("\n========search multiple values in an array==========")
         z = np.searchsorted(a1, [3, 7]) #this find multiple values in array
         print(z)
-    
+
     def main_menu_of_array_searching():
         while True:
             print("\n========menu of numpy array searching example==========")
@@ -544,53 +549,108 @@ def array_searching_example():
                 break
             else:
                 print("\n[invalid choice] please enter your choice between 1-4")
+    main_menu_of_array_searching()
 
     """
         vector maths and matrix operations
     """
 def vector_matrix_operations():
-    #vector scaling
-    print("\n========vector scaling==========")
-    v1 = np.array([1, 2, 3])
-    print(v1 * 5) # Scale the vector by multiplying each element by 5
+    def vector_scaling():
+        #vector scaling
+        print("\n========vector scaling==========")
+        v1 = np.array([1, 2, 3])
+        print(v1 * 5) # Scale the vector by multiplying each element by 5
 
-    #element-wise vector multiplication
-    v2 = np.array([4, 5, 6])
-    print("\n========element-wise vector multiplication==========")
-    print(v1 * v2) # Element-wise multiplication of two vectors | result: [4, 10, 18]
+    def element_wise_vector_multiplication(v1):
+        #element-wise vector multiplication
+        v2 = np.array([4, 5, 6])
+        print("\n========element-wise vector multiplication==========")
+        print(v1 * v2) # Element-wise multiplication of two vectors | result: [4, 10, 18]
 
-    #dot product of two vectors
-    dot_1 = np.dot(v1, v2) # Dot product of two vectors | result: 32
-    print("\n========dot product of two vectors==========")
-    print(dot_1)
+    def dot_product_of_two_vectors(v1,v2):
+        #dot product of two vectors
+        dot_1 = np.dot(v1, v2) # Dot product of two vectors | result: 32
+        print("\n========dot product of two vectors==========")
+        print(dot_1)
 
-    dot_2 = v1 @ v2 # Dot product using the @ operator | result: 32
-    print("\n========dot product using @ operator==========")
-    print(dot_2)
+    def dot_using_operator(v1,v2):
+        dot_2 = v1 @ v2 # Dot product using the @ operator | result: 32
+        print("\n========dot product using @ operator==========")
+        print(dot_2)
 
-    dot_3 = np.sum(v1 * v2) # Dot product using element-wise multiplication and sum | result: 32
-    print("\n========dot product using element-wise multiplication and sum==========")
-    print(dot_3)
+    def dot_using_element_wise_multiplication_and_sum(v1,v2):
+        dot_3 = np.sum(v1 * v2) # Dot product using element-wise multiplication and sum | result: 32
+        print("\n========dot product using element-wise multiplication and sum==========")
+        print(dot_3)
 
-    dot_4 = v1.dot(v2) # Dot product using the dot method of the array | result: 32
-    print("\n========dot product using dot method of the array==========")
-    print(dot_4)
+    def dot_product_using_dot_method(v1,v2):
+        dot_4 = v1.dot(v2) # Dot product using the dot method of the array | result: 32
+        print("\n========dot product using dot method of the array==========")
+        print(dot_4)
 
     #cross product(3D vectors only)
     v3 = np.array([1, 2, 3])
     v4 = np.array([4, 5, 6])
-    cross_product = np.cross(v3, v4) # Cross product of two 3 D vectors | result: [-3, 6, -3]
-    print("\n========cross product of two 3D vectors==========")
-    print(cross_product)
+    def cross_product_of_two_3D_vectors(v3,v4):
+        cross_product = np.cross(v3, v4) # Cross product of two 3 D vectors | result: [-3, 6, -3]
+        print("\n========cross product of two 3D vectors==========")
+        print(cross_product)
 
-    #matrix-vector multiplication
-    print("\n========matrix-vector multiplication==========")
-    matrix = np.arange(1,5).reshape(2,2) # Create a 2x2 matrix | result: [[1, 2], [3, 4]]
-    vector = np.array([5, 6]) # Create a vector | result: [5, 6]
-    result = matrix @ vector # Matrix-vector multiplication | result: [17, 39]
-    #calculated as follows:
-    # [1*5 + 2*6, 3*5 + 4*6] = [17, 39]
-    print(result)
+    def matrix_and_vector_multiplication():
+        #matrix-vector multiplication
+        print("\n========matrix-vector multiplication==========")
+        matrix = np.arange(1,5).reshape(2,2) # Create a 2x2 matrix | result: [[1, 2], [3, 4]]
+        vector = np.array([5, 6]) # Create a vector | result: [5, 6]
+        result = matrix @ vector # Matrix-vector multiplication | result: [17, 39]
+        #calculated as follows:
+        # [1*5 + 2*6, 3*5 + 4*6] = [17, 39]
+        print(result)
+    def main_menu_of_vector_matrix_operation():
+        while True:
+            print("\n=========main menu of vector and matrix operations==========")
+            print("1. run vector scaling ")
+            print("2. run element-wise vector multiplication ")
+            print("3. run dot product of two vectors ")
+            print("4. run dot product using @ operator ")
+            print("5. run dot product using element-wise multiplication and sum ")
+            print("6. run dot product using dot method of the array ")
+            print("7. run cross product of two 3D vectors ")
+            print("8. run matrix-vector multiplication ")
+            print("9. exit the main menu of vector and matrix operations ")
+
+            choice = int(input("Enter your choice between(1-9)=> "))
+
+            if choice == 1:
+                vector_scaling()
+            elif choice == 2:
+                v1 = np.array([1, 2, 3])
+                element_wise_vector_multiplication(v1)
+            elif choice == 3:
+                v1 = np.array([1, 2, 3])
+                v2 = np.array([4, 5, 6])
+                dot_product_of_two_vectors(v1, v2)
+            elif choice == 4:
+                v1 = np.array([1, 2, 3])
+                v2 = np.array([4, 5, 6])
+                dot_using_operator(v1, v2)
+            elif choice == 5:
+                v1 = np.array([1, 2, 3])
+                v2 = np.array([4, 5, 6])
+                dot_using_element_wise_multiplication_and_sum(v1,v2)
+            elif choice == 6:
+                v1 = np.array([1, 2, 3])
+                v2 = np.array([4, 5, 6])
+                dot_product_using_dot_method(v1, v2)
+            elif choice == 7:
+                v3 = np.array([1, 2, 3])
+                v4 = np.array([4, 5, 6])
+                cross_product_of_two_3D_vectors(v3, v4)
+            elif choice == 8:
+                matrix_and_vector_multiplication()
+            elif choice == 9:
+                print("\nexiting the main menu of vector and matrix operations.")
+                break
+    main_menu_of_vector_matrix_operation()
 
 def main_menu():
     while True: #this loop will keep running until the user chooses to exit
