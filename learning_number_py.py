@@ -502,20 +502,48 @@ def array_splitting_example():
 
 #array searching example
 def array_searching_example():
-    print("\n========array searching example==========")
-    a1 = np.array([1,2,3,4,5,6,7,8,9,10])
-    x = np.where(a1 == 5) #where function is you to search
-    print(x)
+    def array_searching_using_where():
+        print("\n========array searching example==========")
+        a1 = np.array([1,2,3,4,5,6,7,8,9,10])
+        x = np.where(a1 == 5) #where function is you to search
+        print(x)
 
     #search sorted array
-    print("\n========search sorted array==========")
-    y = np.searchsorted(a1, 5) #searchsorted function is used to find the index where the value should be inserted to maintain the order of the array
-    print(y)
+    def search_sorted_array(a1):
+        print("\n========search sorted array==========")
+        y = np.searchsorted(a1, 5) #searchsorted function is used to find the index where the value should be inserted to maintain the order of the array
+        print(y)
 
     #search multiple values in an array
-    print("\n========search multiple values in an array==========")
-    z = np.searchsorted(a1, [3, 7]) #this find multiple values in array
-    print(z)
+    def search_multiple_values(a1):
+        print("\n========search multiple values in an array==========")
+        z = np.searchsorted(a1, [3, 7]) #this find multiple values in array
+        print(z)
+    
+    def main_menu_of_array_searching():
+        while True:
+            print("\n========menu of numpy array searching example==========")
+            print("1. run array searching using where ")
+            print("2. run search sorted array ")
+            print("3. run search multiple values in an array ")
+            print("4. exit the main menu of numpy array searching example ")
+
+            #taking input from user
+            choice = int(input("Enter your choice between(1-4)=> "))
+
+            if choice == 1:
+                array_searching_using_where()
+            elif choice == 2:
+                a1 = np.array([1,2,3,4,5,6,7,8,9,10])
+                search_sorted_array(a1)
+            elif choice == 3:
+                a1 = np.array([1,2,3,4,5,6,7,8,9,10])
+                search_multiple_values(a1)
+            elif choice == 4:
+                print("\nexited the main menu of numpy array searching example")
+                break
+            else:
+                print("\n[invalid choice] please enter your choice between 1-4")
 
     """
         vector maths and matrix operations
