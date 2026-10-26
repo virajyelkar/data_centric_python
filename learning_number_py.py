@@ -352,34 +352,65 @@ def array_operations():
 
 # numpy array iteration example
 def array_iteration_example():
-    print("============array_iteration===========")
-    arr = np.array([1,2,3,4,5])
-    for i in arr:
-        print(i)
+    def iterating_1D_array():
+        print("============array_iteration===========")
+        arr = np.array([1,2,3,4,5])
+        for i in arr:
+            print(i)
 
-    #iterating 2-D array
-    arr2 = np.arange(12).reshape(2,6) #this will create a 2-D array with shape (2,6)
-    print("\n========2-D Array Iteration==========")
-    for i in arr2:# iterate over each row of the 2-D array
-        print(i)
+    def iterating_2D_array():
+        #iterating 2-D array
+        arr2 = np.arange(12).reshape(2,6) #this will create a 2-D array with shape (2,6)
+        print("\n========2-D Array Iteration==========")
+        for i in arr2:# iterate over each row of the 2-D array
+            print(i)
 
-    #iterating on each element of 2-D array
-    print("\n========Iterating on each element of 2-D array==========")
-    for i in arr2:# iterate over each row of the 2-D array
-        for j in i: # iterate over each element of the row
-            print(j)
+    def iterating_2D_array_elements(arr2):
+        #iterating on each element of 2-D array
+        print("\n========Iterating on each element of 2-D array==========")
+        for i in arr2:# iterate over each row of the 2-D array
+            for j in i: # iterate over each element of the row
+                print(j)
 
-    #iterating 3-D array
-    print("\n========3-D Array Iteration==========")
-    arr3 = np.arange(24).reshape(2,3,4) #this will create a 3-D array with shape (2,3,4)
-    for i in arr3:
-        print(i)
-    #iterate down the scalar elements of the 3-D array
-    print("\n========Iterating on each element of 3-D array==========")
-    for i in arr3:# iterate over each 2-D array of the 3-D array
-        for j in i: # iterate over each row of the 2-D array
-            for k in j: # iterate over each element of the row
-                print(k)
+    def iterating_3D_array():
+        #iterating 3-D array
+        print("\n========3-D Array Iteration==========")
+        arr3 = np.arange(24).reshape(2,3,4) #this will create a 3-D array with shape (2,3,4)
+        for i in arr3:
+            print(i)
+        #iterate down the scalar elements of the 3-D array
+        print("\n========Iterating on each element of 3-D array==========")
+        for i in arr3:# iterate over each 2-D array of the 3-D array
+            for j in i: # iterate over each row of the 2-D array
+                for k in j: # iterate over each element of the row
+                    print(k)
+    
+    def main_menu_of_array_iteration():
+        while True:
+            print("\n========menu of array iteration===========")
+            print("1. run iterating 1-D array ")
+            print("2. run iterating 2-D array ")
+            print("3. run iterating on each element of 2-D array ")
+            print("4. run iterating 3-D array ")
+            print("5. exit the main menu of array iteration ")
+
+            #taking input from user
+            choice = int(input("Enter your choice between(1-5)=> "))
+
+            if choice == 1:
+                iterating_1D_array()
+            elif choice == 2:
+                iterating_2D_array()
+            elif choice == 3:
+                arr2 = np.arange(12).reshape(2,6) #this will create a 2-D array with shape (2,6)
+                iterating_2D_array_elements(arr2)
+            elif choice == 4:
+                iterating_3D_array()
+            elif choice == 5:
+                print("\nexited the main menu of array iteration")
+                break
+            else:
+                print("\n[invalid choice] please enter your choice between 1-5")
 
 #numpy array joining example
 def numpy_array_joining_example():
@@ -387,35 +418,87 @@ def numpy_array_joining_example():
     a1 = np.array([[1,2,3],[4,5,6]])
     a2 = np.array([[7,8,9],[10,11,12]])
 
-    #joining two arrays along axis 0
-    print("\n========joining two arrays along axis 0==========")
-    print(np.concatenate((a1,a2),axis=0)) #this will join the two arrays along the first axis (rows)
+    def joining_two_arrays_along_axis_0():
+        #joining two arrays along axis 0
+        print("\n========joining two arrays along axis 0==========")
+        print(np.concatenate((a1,a2),axis=0)) #this will join the two arrays along the first axis (rows)
 
-    #joining two arrays along axis 1
-    print("\n========joining two arrays along axis 1==========")
-    print(np.concatenate((a1,a2),axis=1)) #this will join the two arrays along the second axis (columns)
+    def joining_two_arrays_along_axis_1():
+        #joining two arrays along axis 1
+        print("\n========joining two arrays along axis 1==========")
+        print(np.concatenate((a1,a2),axis=1)) #this will join the two arrays along the second axis (columns)
+
+    def main_menu_of_numpy_array_joining():
+        while True:
+            print("\n========menu of numpy array joining example==========")
+            print("1. run joining two arrays along axis 0 ")
+            print("2. run joining two arrays along axis 1 ")
+            print("3. exit the main menu of numpy array joining example ")
+
+            #taking input from user
+            choice = int(input("Enter your choice between(1-3)=> "))
+
+            if choice == 1:
+                joining_two_arrays_along_axis_0()
+            elif choice == 2:
+                joining_two_arrays_along_axis_1()
+            elif choice == 3:
+                print("\nexited the main menu of numpy array joining example")
+                break
+            else:
+                print("\n[invalid choice] please enter your choice between 1-3")
 
 #numpy array splitting example
 def array_splitting_example():
     arr = np.array([1,2,3,4,5,6,7,8,9,10])
-    #splitting an array into 2 equal parts
-    print("\n========splitting an array into 2 equal parts==========")
-    print(np.array_split(arr, 2)) #this will split the array into 2 equal parts
+    def splitting_array_into_equal_parts(arr):
+        #splitting an array into 2 equal parts
+        print("\n========splitting an array into 2 equal parts==========")
+        print(np.array_split(arr, 2)) #this will split the array into 2 equal parts
 
-    #accessing the first part of the split array
-    print("\n========accessing the first part of the split array==========")
-    print(np.array_split(arr, 2)[0]) #this will access the first part of the split array
-    print(np.array_split(arr, 2)[1])
+    def splitting_array_into_unequal_parts(arr):
+        #accessing the first part of the split array
+        print("\n========accessing the first part of the split array==========")
+        print(np.array_split(arr, 2)[0]) #this will access the first part of the split array
+        print(np.array_split(arr, 2)[1])
 
     #splitting 2-D array into 2 equal parts
     arr2d = np.array([[1,2],[3,4],[5,6],[7,8]])
-    print("\n========splitting 2-D array into 2 equal parts==========")
-    newarr = np.array_split(arr2d, 2) #this will split the 2-D array into 2 equal parts
-    print(newarr)
+    def splitting_2D_array_into_equal_parts(arr2d):
+        print("\n========splitting 2-D array into 2 equal parts==========")
+        newarr = np.array_split(arr2d, 2) #this will split the 2-D array into 2 equal parts
+        print(newarr)
 
     #splitting 2-D array into 2-d array along columns
-    print("\n========splitting 2-D array into 3 equal parts==========")
-    print(np.array_split(arr2d, 3, axis=1)) #this will split the 2-D array into 3 equal parts along columns
+    def splitting_2D_array_into_unequal_parts(arr2d):
+        print("\n========splitting 2-D array into 3 equal parts==========")
+        print(np.array_split(arr2d, 3, axis=1)) #this will split the 2-D array into 3 equal parts along columns
+    
+    def main_menu_of_array_splitting():
+        while True:
+            print("\n========menu of numpy array splitting example==========")
+            print("1. run splitting an array into 2 equal parts ")
+            print("2. run accessing the first part of the split array ")
+            print("3. run splitting 2-D array into 2 equal parts ")
+            print("4. run splitting 2-D array into 3 equal parts along columns ")
+            print("5. exit the main menu of numpy array splitting example ")
+
+            #taking input from user
+            choice = int(input("Enter your choice between(1-5)=> "))
+
+            if choice == 1:
+                splitting_array_into_equal_parts(arr)
+            elif choice == 2:
+                splitting_array_into_unequal_parts(arr)
+            elif choice == 3:
+                splitting_2D_array_into_equal_parts(arr2d)
+            elif choice == 4:
+                splitting_2D_array_into_unequal_parts(arr2d)
+            elif choice == 5:
+                print("\nexited the main menu of numpy array splitting example")
+                break
+            else:
+                print("\n[invalid choice] please enter your choice between 1-5")
 
 #array searching example
 def array_searching_example():
