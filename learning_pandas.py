@@ -2,6 +2,7 @@ import pandas as pd
 # basic pandas dataframe
 df = pd.read_csv('student_mental_health.csv')
 
+#basic dataframe of pandas
 def basic_dataframe_of_pandas():
     data = {
         "calories" : [120,350,500],
@@ -56,15 +57,47 @@ def analyzing_dataframe(df):
                 print("[invalid choice] please enter number between 1-4")
     main_menu_of_analyzing_data()
 
+#descriptive statistics in pandas with describe and more
+def use_of_describe(df):
+    print(df.describe())
+
+def Individual_Descriptive_Statistical_Functions(df):
+    def mean_function(df):
+        print(df.mean(numeric_only=True))#mean only works with numerical values
+    def median_function(df):
+        print(df.median(numeric_only=True))
+
+    def main_menu_of_statistical_operation():
+        while True:
+            print("\n=========main menu of statistical operation============")
+            print("1. run mean operation")
+            print("2. run median operation")
+            print("3. exit the menu")
+
+            choice = int(input("Enter your choice between(1-3)"))
+            
+            if choice == 1:
+                mean_function(df)
+            elif choice == 2:
+                median_function(df)
+            elif choice == 3:
+                print("\nexiting the main menu of statistical functions")
+                break
+            else:
+                print("\n invalid choice")
+    main_menu_of_statistical_operation()
+#main menu of pandas 
 def main_menu_of_pandas(df):
     while True:
         print("\n=======main menu of pandas========")
         print("1. run basic dataframe of pandas")
         print("2. run reading csv file")
         print("3. run analyzing dataframe")
-        print("4. exit the main menu of pandas")
+        print("4. run describe function")
+        print("5. run individual statistical operation")
+        print("6. exit the main menu of pandas")
         
-        choice = int(input("Enter your choice between(1-4)=> "))
+        choice = int(input("Enter your choice between(1-6)=> "))
         
         if choice == 1:
             basic_dataframe_of_pandas()
@@ -73,8 +106,12 @@ def main_menu_of_pandas(df):
         elif choice == 3:
             analyzing_dataframe(df)
         elif choice == 4:
+            use_of_describe(df)
+        elif choice == 5:
+            Individual_Descriptive_Statistical_Functions(df)
+        elif choice == 6:
             print("\nexiting the main menu of pandas")
             break
         else:
-            print("[invalid choice] please enter number between 1-4")
+            print("[invalid choice] please enter number between 1-6")
 main_menu_of_pandas(df)
