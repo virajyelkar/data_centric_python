@@ -63,30 +63,48 @@ def use_of_describe(df):
 
 def Individual_Descriptive_Statistical_Functions(df):
     def mean_function(df):
+        print("\n==============mean function==============")
         print(df.mean(numeric_only=True))#mean only works with numerical values
+
     def median_function(df):
+        print("\n===============median function===========")
         print(df.median(numeric_only=True))
+
+    def null_value(df):
+        print("\n============== isnull function===========")
+        print(df.isnull()) #to check specific cell is empty or blank
+
+    def null_with_sum_function(df):
+        print("\n=============isnull with sum===============")
+        print(df.isnull().sum()) # Returns the column names with the total number of missing cells in each
 
     def main_menu_of_statistical_operation():
         while True:
             print("\n=========main menu of statistical operation============")
             print("1. run mean operation")
             print("2. run median operation")
-            print("3. exit the menu")
+            print("3. run isnull operation")
+            print("4. run isnull with sum operation")
+            print("5. exit the menu")
 
-            choice = int(input("Enter your choice between(1-3)"))
-            
+            choice = int(input("Enter your choice between(1-4)=> "))
+
             if choice == 1:
                 mean_function(df)
             elif choice == 2:
                 median_function(df)
             elif choice == 3:
+                null_value(df)
+            elif choice == 4:
+                null_with_sum_function(df)
+            elif choice == 5:
                 print("\nexiting the main menu of statistical functions")
                 break
             else:
                 print("\n invalid choice")
     main_menu_of_statistical_operation()
-#main menu of pandas 
+
+#main menu of pandas
 def main_menu_of_pandas(df):
     while True:
         print("\n=======main menu of pandas========")
@@ -96,9 +114,9 @@ def main_menu_of_pandas(df):
         print("4. run describe function")
         print("5. run individual statistical operation")
         print("6. exit the main menu of pandas")
-        
+
         choice = int(input("Enter your choice between(1-6)=> "))
-        
+
         if choice == 1:
             basic_dataframe_of_pandas()
         elif choice == 2:
