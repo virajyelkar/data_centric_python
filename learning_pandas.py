@@ -133,11 +133,11 @@ def use_of_describe(df):
 def Individual_Descriptive_Statistical_Functions(df):
     def mean_function(df):
         print("\n==============mean function==============")
-        print(df.mean(numeric_only=True))#mean only works with numerical values
+        print(df.mean(numeric_only=True)) #mean() function is used to calculate the mean of the values for the requested axis. The mean is the sum of the values divided by the number of values.
 
     def median_function(df):
         print("\n===============median function===========")
-        print(df.median(numeric_only=True))
+        print(df.median(numeric_only=True))#median() function is used to calculate the median of the values for the requested axis. The median is the middle value of the values.
 
     def main_menu_of_statistical_operation():
         while True:
