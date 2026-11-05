@@ -67,20 +67,59 @@ def handling_missing_values(df):
         print("\n=============isnull with sum===============")
         print(df.isnull().sum()) # Returns the column names with the total number of missing cells in each
 
+    def not_null_function(df):
+        print("\n==============notnull function==============")
+        print(df.notnull()) #to check specific cell is not empty or blank
+
+    #fillna function Replaces missing values with a constant, a statistic (mean/median/mode), or a per-column dict. This is imputation.
+    def  fillna_function(df):
+        print("\n==============fillna function==============")
+        print(df.fillna(0)) #to fill the missing values with 0
+
+    def fillna_with_parameters(df):
+        print("\n================fillna with parameters================")
+        print(df.fillna(value=None, limit=None, inplace=False))
+
+    #ffill and bfill function Replaces missing values with the next or previous value in the column. This is imputation.
+    def ffill_and_bfill_function(df):
+        print("\n=================ffill and bfill function==================")
+        print(df.ffill()) #to fill the missing values with the previous value
+        print(df.bfill()) #to fill the missing values with the next value
+
+    def ffill_and_bfill_with_limit_parameters(df):
+        print("\n=================ffill and bfill with limit parameters==================")
+        print(df.ffill(limit=2)) #to fill the missing values with the previous value, but only up to 2 consecutive values
+        print(df.bfill(limit=2)) #to fill the missing values with the next value, but only up to 2 consecutive values
+
     def main_menu_of_handling_missing_values():
         while True:
             print("\n================main menu of handling missing values===============")
             print("1. run isnull function")
             print("2. run isnull with sum function")
-            print("3. exit the menu")
+            print("3. run notnull function")
+            print("4. run fillna function")
+            print("5. run fillna with parameters")
+            print("6. run ffill and bfill function")
+            print("7. run ffill and bfill with limit parameters")
+            print("8. exit the menu")
 
-            choice = int(input("Enter your choice between (1-3) => "))
+            choice = int(input("Enter your choice between (1-8)=> "))
 
             if choice == 1:
                 null_value(df)
             elif choice == 2:
                 null_with_sum_function(df)
             elif choice == 3:
+                not_null_function(df)
+            elif choice == 4:
+                fillna_function(df)
+            elif choice == 5:
+                fillna_with_parameters(df)
+            elif choice == 6:
+                ffill_and_bfill_function(df)
+            elif choice == 7:
+                ffill_and_bfill_with_limit_parameters(df)
+            elif choice == 8:
                 print("\n exiting the main menu of handling missing values...")
                 break
             else:
