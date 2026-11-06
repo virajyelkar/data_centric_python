@@ -33,6 +33,22 @@ def analyzing_dataframe(df):
     def use_of_info_function(df):
         print("\n=================info function===============")
         print(df.info()) #The DataFrames object has a method called info(), that gives you more information about the data set
+    
+    #Attributes (no parentheses) that describe the DataFrame's structure: row/column counts, names, and data types.
+    def use_of_attributes(df):
+        print("\n=================attributes================")
+        print(f"Shape of DataFrame: {df.shape}")
+        print(f"Columns of DataFrame: {df.columns.tolist()}")
+        print(f"Data types of DataFrame: {df.dtypes.tolist()}")
+        print(f"size of DataFrame: {df.size}")
+    
+    def use_of_describe(df):
+        print("\n=============Describe function============")
+        print(df.describe()) #Returns summary statistics (count, mean, std, min, quartiles, max). Compare feature scales and spot suspicious ranges before scaling.
+
+    def use_of_value_counts(df):
+        print("\n=============value_counts function=============")
+        print(df.value_counts())
 
     def main_menu_of_analyzing_data():
         while True:
@@ -40,9 +56,12 @@ def analyzing_dataframe(df):
             print("1. Use of head function")
             print("2. Use of tail function")
             print("3. Use of info function")
-            print("4. exit the menu")
+            print("4. Use of attributes")
+            print("5. Use of describe function")
+            print("6. Use of value_counts function")
+            print("7. exit the menu")
 
-            choice = int(input("enter your choice between(1-4)=> "))
+            choice = int(input("enter your choice between(1-7)=> "))
 
             if choice == 1:
                 use_of_head_function(df)
@@ -51,11 +70,70 @@ def analyzing_dataframe(df):
             elif choice == 3:
                 use_of_info_function(df)
             elif choice == 4:
+                use_of_attributes(df)
+            elif choice == 5:
+                use_of_describe(df)
+            elif choice == 6:
+                use_of_value_counts(df)
+            elif choice == 7:
                 print("\nexiting the main menu of analyzing data")
                 break
             else:
-                print("[invalid choice] please enter number between 1-4")
+                print("[invalid choice] please enter number between 1-7")
     main_menu_of_analyzing_data()
+
+#selecting and filtering data in pandas
+def selecting_and_filtering_data(df):
+    #selecting data
+    def selecting_data(df):
+        print("\n==============selecting data===============")
+        print(df['age']) #selecting a single column
+        print(df[['age','gender']]) #selecting multiple columns
+
+    #filtering data
+    def filtering_data(df):
+        print("\n==============filtering data===============")
+        print(df[df['age'] > 20]) #filtering rows based on a condition
+        print(df[(df['age'] > 20) & (df['gender'] == 'Female')]) #filtering rows based on multiple conditions
+    
+    #Querying data
+    def querying_data(df):
+        print("\n==============querying data===============")
+        print(df.query('age > 20')) #querying rows based on a condition
+        print(df.query('age > 20 & gender == "Female"')) #querying rows based on multiple conditions
+        print(df.query('age > 20 | study_hours > 7')) #querying rows based on multiple conditions with OR operator
+    
+    #isin function
+    def isin_function(df):
+        print("\n==============isin function===============")
+        print(df['department'].isin(['BCA']))
+        print(df[~df['department'].isin(['BCA'])]) #~is used to negate the condition, so it will return all the rows where the department is not BCA
+
+    def main_menu_of_selecting_and_filtering_data():
+        while True:
+            print("\n=========main menu of selecting and filtering data==========")
+            print("1. run selecting data")
+            print("2. run filtering data")
+            print("3. run querying data")
+            print("4. run isin function")
+            print("5. exit the menu")
+
+            choice = int(input("Enter your choice between(1-5)=> "))
+
+            if choice == 1:
+                selecting_data(df)
+            elif choice == 2:
+                filtering_data(df)
+            elif choice == 3:
+                querying_data(df)
+            elif choice == 4:
+                isin_function(df)
+            elif choice == 5:
+                print("\nexiting the main menu of selecting and filtering data")
+                break
+            else:
+                print("[invalid choice] please enter number between 1-5")
+    main_menu_of_selecting_and_filtering_data()
 
 #handling missing value
 def handling_missing_values(df):
@@ -127,13 +205,12 @@ def handling_missing_values(df):
     main_menu_of_handling_missing_values()
 
 #descriptive statistics in pandas with describe and more
-def use_of_describe(df):
-    print(df.describe())
 
 def Individual_Descriptive_Statistical_Functions(df):
     def mean_function(df):
         print("\n==============mean function==============")
         print(df.mean(numeric_only=True)) #mean() function is used to calculate the mean of the values for the requested axis. The mean is the sum of the values divided by the number of values.
+        print(df['sleep_hours'].mean()) #column based mean calculation
 
     def median_function(df):
         print("\n===============median function===========")
@@ -166,8 +243,8 @@ def main_menu_of_pandas(df):
         print("1. run basic dataframe of pandas")
         print("2. run reading csv file")
         print("3. run analyzing dataframe")
-        print("4. run handling missing values")
-        print("5. run describe function")
+        print("4. run selecting and filtering data")
+        print("5. run handling missing values")
         print("6. run individual statistical operation")
         print("7. exit the main menu of pandas")
 
@@ -180,14 +257,14 @@ def main_menu_of_pandas(df):
         elif choice == 3:
             analyzing_dataframe(df)
         elif choice == 4:
-            handling_missing_values(df)
+            selecting_and_filtering_data(df)
         elif choice == 5:
-            use_of_describe(df)
+            handling_missing_values(df)
         elif choice == 6:
             Individual_Descriptive_Statistical_Functions(df)
         elif choice == 7:
             print("\nexiting the main menu of pandas")
             break
         else:
-            print("[invalid choice] please enter number between 1-6")
+            print("[invalid choice] please enter number between 1-7")
 main_menu_of_pandas(df)
