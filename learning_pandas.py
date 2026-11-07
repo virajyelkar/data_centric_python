@@ -102,7 +102,7 @@ def selecting_and_filtering_data(df):
         print(df.query('age > 20')) #querying rows based on a condition
         print(df.query('age > 20 & gender == "Female"')) #querying rows based on multiple conditions
         print(df.query('age > 20 | study_hours > 7')) #querying rows based on multiple conditions with OR operator
-    
+
     #isin function
     def isin_function(df):
         print("\n==============isin function===============")
@@ -215,21 +215,97 @@ def Individual_Descriptive_Statistical_Functions(df):
     def median_function(df):
         print("\n===============median function===========")
         print(df.median(numeric_only=True))#median() function is used to calculate the median of the values for the requested axis. The median is the middle value of the values.
+        print(df['sleep_hours'].median()) #column based median calculation
+
+    def mode_function(df):
+        print("\n===============mode function==============")
+        print(df.mode(numeric_only=True)) #mode() function is used to calculate the mode of the values for the requested axis. The mode is the value that appears most frequently in the values.
+        print(df['sleep_hours'].mode()) #column based mode calculation
+
+    #std() / var() function
+    def std_and_var_function(df):
+        print("\n===============std and var function==============")
+        print(df.std(numeric_only=True)) #std() function is used to calculate the standard deviation of the values for the requested axis. The standard deviation is a measure of how spread out the values are.
+        print(df.var(numeric_only=True)) #var() function is used to calculate the variance of the values for the requested axis. The variance is a measure of how spread out the values are.
+        print(df['sleep_hours'].std()) #column based std calculation
+        print(df['sleep_hours'].var()) #column based var calculation
+    
+    #min() / max() function
+    def min_and_max_function(df):
+        print("\n===============min and max function==============")
+        print(df.min(numeric_only=True)) #min() function is used to calculate the minimum of the values for the requested axis. The minimum is the smallest value in the values.
+        print(df.max(numeric_only=True)) #max() function is used to calculate the maximum
+        print(df['screen_time'].min()) #column based min calculation
+        print(df['screen_time'].max()) #column based max calculation
+    
+    #sum() / count() function
+    def sum_and_count_function(df):
+        print("\n===============sum and count function==============")
+        print(df.sum(numeric_only=True)) #sum() function is used to calculate the sum of the values for the requested axis. The sum is the total of the values.
+        print(df.count()) #count() function is used to calculate the count of the values for the requested axis. The count is the number of non-null values in the values.
+        print(df['financial_stress'].sum()) #column based sum calculation
+
+    #quantile() function
+    def quantile_function(df):
+        print("\n===============quantile function==============")
+        print(df.quantile(numeric_only=True)) #quantile() function is used to calculate the quantiles of the values for the requested axis. The quantiles are the values that divide the values into equal parts.
+        print(df['sleep_hours'].quantile()) #column based quantile calculation
+
+    #skew() / kurt() function
+    def skew_and_kurt_function(df):
+        print("\n==============skew and kurt function==============")
+        print(df.skew(numeric_only=True)) #skew() measures asymmetry (above 0 is a long right tail)
+        print(df.kurt(numeric_only=True)) # kurt() measures tail heaviness. Both guide transformations such as log.
+
+    #corr() function
+    def corr_function(df):
+        print("\n===============corr function===============")
+        print(df.corr(numeric_only=True)) #Pairwise correlation between numeric columns. Shows feature-target relationships and redundant features.
+
+    #agg() function
+    def agg_function(df):
+        print("\n=============== agg function=============")
+        print(df.agg(["mean","min","max"])) #Computes several statistics at once, for all columns or a different list per column.
+        print(df.agg({"sleep_hours" : "mean","marks" : ["mean","mode"]}))
 
     def main_menu_of_statistical_operation():
         while True:
             print("\n=========main menu of statistical operation============")
             print("1. run mean operation")
             print("2. run median operation")
-            print("3. exit the menu")
+            print("3. run mode operation")
+            print("4. run standard deviation and variance operation")
+            print("5. run min and max operation")
+            print("6. run sum and count operation")
+            print("7. run quantile calculation operation")
+            print("8. run skew and kurt operation")
+            print("9. run correlation operation")
+            print("10. run agg operation")
+            print("11. exit the main menu of descriptive statistics")
 
-            choice = int(input("Enter your choice between(1-3)=> "))
+            choice = int(input("Enter your choice between(1-11)=> "))
 
             if choice == 1:
                 mean_function(df)
             elif choice == 2:
                 median_function(df)
             elif choice == 3:
+                mode_function(df)
+            elif choice == 4:
+                std_and_var_function(df)
+            elif choice == 5:
+                min_and_max_function(df)
+            elif choice == 6:
+                sum_and_count_function(df)
+            elif choice == 7:
+                quantile_function(df)
+            elif choice == 8:
+                skew_and_kurt_function(df)
+            elif choice == 9:
+                corr_function(df)
+            elif choice == 10:
+                agg_function(df)
+            elif choice == 11:
                 print("\nexiting the main menu of statistical functions")
                 break
             else:
